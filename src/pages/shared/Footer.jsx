@@ -10,7 +10,7 @@ const Footer = () => {
                     <div className="row">
                         <div className="col-md-6 mt-md-0 mt-3">
                             <h5 className="text-uppercase">Foodaholic</h5>
-                            <p>Foodaholic has lot to discover.Take a good look around, and learn the features of Recipes.</p>
+                            <p>Foodaholic has lot to discover. We are passionate about cooking and sharing delicious recipes with our community. Our site is dedicated to providing you with the best recipes for any occasion, whether you're looking for a quick and easy weeknight meal, a show-stopping dessert, or something in between. <br /> <br /> Our team of expert means the chefs work tirelessly to develop and test new recipes, ensuring that every dish we share is not only delicious but also easy to follow and prepare at home. We believe that cooking should be fun and approachable for everyone, regardless of your skill level in the kitchen.</p>
                         </div>
 
                         <hr className="clearfix w-100 d-md-none pb-0" />

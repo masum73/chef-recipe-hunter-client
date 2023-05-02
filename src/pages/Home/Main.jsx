@@ -1,5 +1,5 @@
 import React from 'react';
-import ChiefCards from './ChiefCards';
+import ChiefCards from './ChefCards';
 import TopRecipes from './TopRecipes';
 import RecentRecipes from './RecentRecipes';
 import { Container } from 'react-bootstrap';
@@ -7,9 +7,9 @@ import { Container } from 'react-bootstrap';
 const Main = () => {
     return (
         <Container>
-         <ChiefCards></ChiefCards> 
-         <TopRecipes></TopRecipes>  
-         <RecentRecipes></RecentRecipes>
+            <ChiefCards></ChiefCards>
+            <TopRecipes></TopRecipes>
+            <RecentRecipes></RecentRecipes>
         </Container>
     );
 };
