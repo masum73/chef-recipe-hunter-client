@@ -7,7 +7,9 @@ const LoginLayout = () => {
     return (
         <div>
             <Navigation></Navigation>
-            <Outlet></Outlet>
+            <div style={{ minHeight: 'calc(100vh - 428px)' }} className="md">
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

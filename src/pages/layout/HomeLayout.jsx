@@ -9,7 +9,9 @@ const HomeLayout = () => {
         <>
             <Navigation></Navigation>
             <Banner></Banner>
-            <Outlet></Outlet>
+            <div style={{ minHeight: 'calc(100vh - 200px)' }} className="md">
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </>
     );
