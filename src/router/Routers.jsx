@@ -6,6 +6,7 @@ import LoginLayout from "../pages/layout/LoginLayout";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import Main from "../pages/Home/Main";
+import Terms from "../pages/Terms/Terms";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog></Blog>
-      },
+      }
     ]
   },
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/terms',
+        element: <Terms></Terms>
       },
       {
         path: '/login',
