@@ -18,30 +18,30 @@ const Navigation = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
-                            <NavLink style={{ textDecoration: 'none', fontSize: '30px', margin: '5px' }} className={
+                            <NavLink style={{ textDecoration: 'none', fontSize: '20px', margin: '5px' }} className={
                                 ({ isActive }) =>
                                     isActive ? "text-success"
                                         : ""
                             } to='/'>Home</NavLink>
-                            <NavLink style={{ textDecoration: 'none', fontSize: '30px', margin: '5px' }} className={
+                            <NavLink style={{ textDecoration: 'none', fontSize: '20px', margin: '5px' }} className={
                                 ({ isActive }) =>
                                     isActive ? "text-success"
                                         : ""
                             } to='/blog'>Blog</NavLink>
-                            <NavLink style={{ textDecoration: 'none', fontSize: '30px', margin: '5px' }} className={
+                            <NavLink style={{ textDecoration: 'none', fontSize: '20px', margin: '5px' }} className={
                                 ({ isActive }) =>
                                     isActive ? "text-success"
                                         : ""
                             } to='/register'>Register</NavLink>
                             {
                                 user ?
-                                    <NavLink style={{ textDecoration: 'none', fontSize: '30px', margin: '5px' }} className={
+                                    <NavLink style={{ textDecoration: 'none', fontSize: '20px', margin: '5px' }} className={
                                         ({ isActive }) =>
-                                            isActive ? "text-success"
+                                            isActive ? "text-primary"
                                                 : ""
                                     } onClick={handleLogOut} variant="secondary">Logout</NavLink>
                                     :
-                                    <NavLink style={{ textDecoration: 'none', fontSize: '30px', margin: '5px' }} className={
+                                    <NavLink style={{ textDecoration: 'none', fontSize: '20px', margin: '5px' }} className={
                                         ({ isActive }) =>
                                             isActive ? "text-success"
                                                 : ""
