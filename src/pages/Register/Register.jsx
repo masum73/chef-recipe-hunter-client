@@ -85,15 +85,7 @@ const Register = () => {
                     <Form.Label>Photo URL</Form.Label>
                     <Form.Control type="text" name='photo' placeholder="Photo URL" />
                 </Form.Group>
-
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check
-                        onClick={handleAccepted}
-                        type="checkbox"
-                        name="accept"
-                        label={<>Accept <Link to="/terms">Terms and Conditions</Link> </>} />
-                </Form.Group>
-                <Button variant="primary" disabled={!accepted} type="submit">
+                <Button variant="primary" type="submit">
                     Register
                 </Button>
                 <br />
