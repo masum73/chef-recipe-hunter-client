@@ -1,15 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
     const { signIn, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
-    const location = useLocation();
-    console.log(location)
 
-    const from = location.state?.from?.pathname || '/';
+    const from =  '/';
+    console.log(from);
 
     const [errors, setErrors] = useState('');
     const [success, setSuccess] = useState('');

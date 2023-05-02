@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Navigation = () => {
@@ -18,16 +18,34 @@ const Navigation = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
-                            <Link className='mx-2 ' to='/'>Home</Link>
-                            <Link className='mx-2 ' to='/blog'>Blog</Link>
-                            <Link className='mx-2' to='/register'>Register</Link>
+                            <NavLink style={{ textDecoration: 'none', fontSize: '30px', margin: '5px' }} className={
+                                ({ isActive }) =>
+                                    isActive ? "text-success"
+                                        : ""
+                            } to='/'>Home</NavLink>
+                            <NavLink style={{ textDecoration: 'none', fontSize: '30px', margin: '5px' }} className={
+                                ({ isActive }) =>
+                                    isActive ? "text-success"
+                                        : ""
+                            } to='/blog'>Blog</NavLink>
+                            <NavLink style={{ textDecoration: 'none', fontSize: '30px', margin: '5px' }} className={
+                                ({ isActive }) =>
+                                    isActive ? "text-success"
+                                        : ""
+                            } to='/register'>Register</NavLink>
                             {
                                 user ?
-                                    <Button onClick={handleLogOut} variant="secondary">Logout</Button>
+                                    <NavLink style={{ textDecoration: 'none', fontSize: '30px', margin: '5px' }} className={
+                                        ({ isActive }) =>
+                                            isActive ? "text-success"
+                                                : ""
+                                    } onClick={handleLogOut} variant="secondary">Logout</NavLink>
                                     :
-                                    <Link to='/login'>
-                                        <Button variant="secondary">Login</Button>
-                                    </Link>
+                                    <NavLink style={{ textDecoration: 'none', fontSize: '30px', margin: '5px' }} className={
+                                        ({ isActive }) =>
+                                            isActive ? "text-success"
+                                                : ""
+                                    } to='/login'>Login</NavLink>
                             }
                         </Nav>
                     </Navbar.Collapse>
