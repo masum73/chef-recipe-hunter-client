@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel} from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
-import ChefBanner from './ChefBanner';
+import SingleChef from '../SingleChef/SingleChef';
 
 const Banner = () => {
     const location = useLocation();
@@ -57,7 +57,7 @@ const Banner = () => {
             </Carousel.Item>
         </Carousel> 
         
-        : <ChefBanner></ChefBanner>
+        : null
         }
             
         </>
