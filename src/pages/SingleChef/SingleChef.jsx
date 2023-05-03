@@ -1,14 +1,15 @@
 import React from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
+import SingleChefRecipes from './SingleChefRecipes';
 
 const SingleChef = () => {
     const sChef = useLoaderData();
     console.log(sChef);
-    const { chef_picture, chef_name, years_of_experience, num_recipes, likes, description } = sChef;
+    const { chef_picture, chef_name, years_of_experience, num_recipes, likes, description, recipes } = sChef;
 
     return (
-        <Container className='d-flex justify-content-evenly align-items-top mt-3'>
+        <Container className='d-flex justify-content-between align-items-top mt-3'>
             {/* <div >
                 <img src={chef_picture} alt="" />
             </div>
@@ -31,7 +32,7 @@ const SingleChef = () => {
                 <Card.Body>
                     <Card.Title>{chef_name}</Card.Title>
                     <Card.Text>
-                        
+
                         {description}
                         <br /> <br />
                         Experience in years: {years_of_experience}
@@ -41,11 +42,17 @@ const SingleChef = () => {
                         Total likes: {likes}
                         <br />
                     </Card.Text>
-                    
+
                 </Card.Body>
             </Card>
-            <div>
-                <h3>Hello</h3>
+            <div className='row row-cols-1 row-cols-lg-2 g-2 g-lg-1'>
+                {
+                    recipes.map(recipe => <div key={recipe.id} className='col'>
+                        <SingleChefRecipes recipe={recipe}
+                        >
+                        </SingleChefRecipes>
+                    </div>)
+                }
             </div>
 
         </Container>
