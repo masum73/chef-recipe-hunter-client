@@ -19,12 +19,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Main></Main>,
-        loader: () => fetch(`http://localhost:5000/`)
+        loader: () => fetch(`https://foodaholic-server-masum73.vercel.app/`)
       },
       {
         path: '/chef/:id',
         element: <PrivateRoute><SingleChef></SingleChef></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/chef/${params.id}`)
+        loader: ({params}) => fetch(`https://foodaholic-server-masum73.vercel.app/chef/${params.id}`)
       }
 
     ]
