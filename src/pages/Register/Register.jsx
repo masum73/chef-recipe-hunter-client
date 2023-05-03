@@ -1,12 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { Button, Container,Form } from 'react-bootstrap';
+import { Button, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
-    const [accepted, setAccepted] = useState(false);
 
     const [errors, setErrors] = useState([]);
     const [success, setSuccess] = useState('')
@@ -23,15 +22,15 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        
+
 
         console.log(name, photo, email, password)
-        if(name.length === 0){
+        if (name.length === 0) {
             errors.push('You must need to enter your name');
             //setError('You must need to enter your name');
             //return;
         }
-        if(email.length === 0){
+        if (email.length === 0) {
             errors.push('You must need to enter your email');
             //setError('You must need to enter your name');
             //return;
@@ -42,25 +41,23 @@ const Register = () => {
             // return;
         }
         setErrors(errors)
-        if(errors.length > 0){
+        if (errors.length > 0) {
             return
         }
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
-                //setErrors('')
+
+                setErrors('')
                 form.reset();
                 setSuccess('user has been created successfully')
             })
             .catch(error => {
                 console.log(error);
                 //setErrors(error.message);
-            })
-    }
-
-    const handleAccepted = event =>{
-        setAccepted(event.target.checked)
+            }
+            )
     }
 
     return (
@@ -71,15 +68,15 @@ const Register = () => {
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="text" name='name' placeholder="Your Name" />
                 </Form.Group>
-                
+
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" name='email' placeholder="Enter Email"  />
+                    <Form.Control type="email" name='email' placeholder="Enter Email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name='password' placeholder="Enter Password"  />
+                    <Form.Control type="password" name='password' placeholder="Enter Password" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Photo URL</Form.Label>
@@ -98,7 +95,7 @@ const Register = () => {
                 </Form.Text>
                 <Form.Text className="text-danger">
                     {
-                        errors.map((e,index) => <p key={index} >{e}</p>)
+                        errors.map((e, index) => <p key={index} >{e}</p>)
                     }
                 </Form.Text>
             </Form>

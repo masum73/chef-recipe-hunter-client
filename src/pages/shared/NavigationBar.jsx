@@ -15,6 +15,7 @@ const Navigation = () => {
         <Container>
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Container>
+                    <Navbar.Brand>Foodaholic</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mx-auto">
@@ -46,6 +47,9 @@ const Navigation = () => {
                                             isActive ? "text-success"
                                                 : ""
                                     } to='/login'>Login</NavLink>
+                            }
+                            {
+                                
                             }
                         </Nav>
                     </Navbar.Collapse>

@@ -8,6 +8,7 @@ import Login from "../pages/Login/Login";
 import Main from "../pages/Home/Main";
 import ErrorPage from "../pages/shared/ErrorPage";
 import SingleChef from "../pages/SingleChef/SingleChef";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/chef/:id',
-        element: <SingleChef></SingleChef>,
+        element: <PrivateRoute><SingleChef></SingleChef></PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/chef/${params.id}`)
       }
 
