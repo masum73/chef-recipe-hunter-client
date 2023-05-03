@@ -5,6 +5,7 @@ import Banner from '../shared/Banner';
 import Footer from '../shared/Footer';
 
 const HomeLayout = () => {
+    
     return (
         <>
             <Navigation></Navigation>
