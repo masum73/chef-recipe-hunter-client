@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 const Footer = () => {
     return (
-        <Container >
+        <Container className='mt-3' >
 
             <div className="page-footer font-small blue pt-4 bg-light">
                 <div className="container-fluid text-center text-md-left">
