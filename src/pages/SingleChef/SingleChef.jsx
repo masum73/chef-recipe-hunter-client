@@ -27,7 +27,7 @@ const SingleChef = () => {
             <div>
                 <h2>Hello</h2>
             </div> */}
-            <Card style={{ width: '30rem' }}>
+            <Card style={{ width: '30rem', maxHeight: '55rem' }}>
                 <Card.Img variant="top" src={chef_picture} />
                 <Card.Body>
                     <Card.Title>{chef_name}</Card.Title>

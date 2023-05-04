@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const SingleChefRecipes = ({ recipe }) => {
-    const { recipe_name,cooking_method, rating  } = recipe;
+    const { recipe_name,cooking_method, rating, ingredients  } = recipe;
     const [buttonDisable, setButtonDisable] = useState(false);
 
     //console.log(recipes);
@@ -25,10 +25,12 @@ const SingleChefRecipes = ({ recipe }) => {
             });
     }
     return (
-        <Card style={{ width: '25rem'}}>
+        <Card style={{ width: '25rem', maxHeight: '38rem'}}>
             <Card.Body>
                 <Card.Title>{recipe_name}</Card.Title>
                 <Card.Text>
+                    Ingredients: {ingredients}
+                    <br />
                     Cooking Method: {cooking_method}
                     <Rating 
                     style={{ maxWidth: 100, marginTop: '1rem' }} 
