@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
-    const { signIn, signInWithGoogle } = useContext(AuthContext);
+    const { signIn, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     console.log('login page location', location)
@@ -21,7 +21,7 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
-        
+
         setErrors('');
         setSuccess('');
 
@@ -47,6 +47,14 @@ const Login = () => {
             })
             .catch(error => console.log(error))
     }
+    const handleGitHubSignIn = () => {
+        signInWithGitHub()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+            })
+            .catch(error => console.log(error))
+    }
 
 
     return (
@@ -55,12 +63,12 @@ const Login = () => {
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name='email' placeholder="Enter email"  />
+                    <Form.Control type="email" name='email' placeholder="Enter email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name='password' placeholder="Password"  />
+                    <Form.Control type="password" name='password' placeholder="Password" />
                 </Form.Group>
 
                 <Button className='me-2' variant="primary" type="submit">
@@ -85,6 +93,9 @@ const Login = () => {
             <div>
                 <Button onClick={handleGoogleSignIn} className='me-2' variant="primary" type="submit">
                     Login with Google
+                </Button>
+                <Button onClick={handleGitHubSignIn} className='me-2' variant="primary" type="submit">
+                    Login with GitHub
                 </Button>
             </div>
         </Container>
