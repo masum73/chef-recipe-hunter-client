@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import SingleChefRecipes from './SingleChefRecipes';
+import LazyLoad from 'react-lazy-load';
 
 const SingleChef = () => {
     const sChef = useLoaderData();
@@ -10,24 +11,10 @@ const SingleChef = () => {
 
     return (
         <Container className='d-flex justify-content-between align-items-top mt-3'>
-            {/* <div >
-                <img src={chef_picture} alt="" />
-            </div>
-            <div>
-                <h2>{chef_name}</h2>
-                <br />
-                <h4>Experience in years: {years_of_experience}</h4>
-                <br />
-                <h4>Total recipes: {num_recipes}</h4>
-                <br />
-                <h4>Total likes: {likes}</h4>
-                <br />
-                <p>{description}</p>
-            </div>
-            <div>
-                <h2>Hello</h2>
-            </div> */}
             <Card style={{ width: '30rem', maxHeight: '55rem' }}>
+                {/* <LazyLoad>
+                    <Card.Img variant="top" src={chef_picture} />
+                </LazyLoad> */}
                 <Card.Img variant="top" src={chef_picture} />
                 <Card.Body>
                     <Card.Title>{chef_name}</Card.Title>
