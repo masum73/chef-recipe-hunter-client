@@ -1,9 +1,21 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import Pdf from "react-to-pdf";
 
 const Blog = () => {
+    const ref = React.createRef();
+    const options = {
+        orientation: 'landscape',
+        unit: 'in',
+        format: [16,12]
+    };
+
+
     return (
-        <Container className='text-center mt-4'>
+        <Container ref={ref} className='text-center mt-4'>
+            <Pdf targetRef={ref} filename="blog.pdf" options={options} x={1} y={1} >
+                {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+            </Pdf>
             <h2>Tell us the differences between uncontrolled and controlled components.</h2>
             <p>In React, controlled components refer to components that have their state and behavior controlled by the parent component. These components rely on props passed down from the parent component to update their state and behavior. Uncontrolled components refer to components that manage their own state internally.</p>
             <br />
