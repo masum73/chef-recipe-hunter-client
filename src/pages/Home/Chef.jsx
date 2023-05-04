@@ -6,7 +6,7 @@ const Chef = ({ chef }) => {
     const { id, chef_picture, chef_name, years_of_experience, num_recipes, likes } = chef;
     return (
         <>
-            <Card style={{ width: '25rem' }}>
+            <Card style={{ width: 'full'}}>
                 <Card.Img variant="top" src={chef_picture} />
                 <Card.Body>
                     <Card.Title>{chef_name}</Card.Title>

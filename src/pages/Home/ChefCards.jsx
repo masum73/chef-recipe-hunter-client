@@ -6,7 +6,7 @@ const ChefCards = ({ allChefs }) => {
     return (
         <>
             <h2 className='text-center mt-3'>All Chefs</h2>
-            <div className='row row-cols-2 row-cols-lg-3 g-2 g-lg-3'>
+            <div className='row row-cols-1 row-cols-lg-3 g-2 gy-4 g-lg-3'>
                 {
                     allChefs.map(chef => <div key={chef.id} className='col'>
                         <Chef
