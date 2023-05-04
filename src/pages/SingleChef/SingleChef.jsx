@@ -27,7 +27,7 @@ const SingleChef = () => {
             <div>
                 <h2>Hello</h2>
             </div> */}
-            <Card style={{ width: '25rem' }}>
+            <Card style={{ width: '30rem' }}>
                 <Card.Img variant="top" src={chef_picture} />
                 <Card.Body>
                     <Card.Title>{chef_name}</Card.Title>
@@ -45,7 +45,7 @@ const SingleChef = () => {
 
                 </Card.Body>
             </Card>
-            <div className='row row-cols-1 row-cols-lg-2 g-2 g-lg-1'>
+            <div className='row row-cols-1 row-cols-lg-2 g-2 g-lg-5 ms-5'>
                 {
                     recipes.map(recipe => <div key={recipe.id} className='col'>
                         <SingleChefRecipes recipe={recipe}
