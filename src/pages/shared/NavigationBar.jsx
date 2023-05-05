@@ -38,11 +38,11 @@ const Navigation = () => {
 
 
 
-                            <NavLink style={{ textDecoration: 'none', fontSize: '20px', margin: '5px' }} className={
+                            {/* <NavLink style={{ textDecoration: 'none', fontSize: '20px', margin: '5px' }} className={
                                 ({ isActive }) =>
                                     isActive ? "text-success"
                                         : ""
-                            } to='/register'>Register</NavLink>
+                            } to='/register'>Register</NavLink> */}
                             {
                                 user && <div className='d-flex justify-content-center align-items-center'>
                                     <OverlayTrigger
